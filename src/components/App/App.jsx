@@ -12,7 +12,6 @@ class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    visible: false,
   };
   onLeaveFeedbackGood = () => {
     this.setState(prevState => {
