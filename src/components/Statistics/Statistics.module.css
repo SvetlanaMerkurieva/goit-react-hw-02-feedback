@@ -1,8 +1,13 @@
-.text {
+.textCapitalCase {
   color: black;
   font-size: 24px;
   text-align: left;
   text-transform: capitalize;
+}
+.text {
+  color: black;
+  font-size: 24px;
+  text-align: left;
 }
 .number {
   margin-left: 30px;

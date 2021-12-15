@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 import s from './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <ul>
+    <ul className={s.list}>
       {options.map(name => (
-        <li>
+        <li key={shortid.generate()}>
           <button
             type="button"
             className={s.button}
@@ -19,7 +20,5 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   );
 };
 FeedbackOptions.propTypes = {
-  onLeaveFeedbackGood: PropTypes.func,
-  onLeaveFeedbackNeutral: PropTypes.func,
-  onLeaveFeedbackBad: PropTypes.func,
+  onLeaveFeedback: PropTypes.func,
 };

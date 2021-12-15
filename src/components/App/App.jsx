@@ -25,17 +25,19 @@ class App extends Component {
     return Object.values(this.state).reduce((acc, value) => acc + value, 0);
   };
 
-  countPositiveFeedbackPercentage = () => {
-    const total = this.countTotalFeedback();
-    const good = Object.values(this.state);
-    return Math.round((good[0] / total) * 100);
+  countPositiveFeedbackPercentage = (feedbackGood, total) => {
+    return Math.round((feedbackGood / total) * 100);
   };
 
   render() {
     const options = Object.keys(this.state);
     const statistics = Object.entries(this.state);
     const total = this.countTotalFeedback();
-    const positivePercentage = countPositiveFeedbackPercentage();
+    const feedbackGood = Object.values(this.state)[0];
+    const positivePercentage = countPositiveFeedbackPercentage(
+      feedbackGood,
+      total,
+    );
     return (
       <div className={s.app}>
         <header className={s.appHeader}>

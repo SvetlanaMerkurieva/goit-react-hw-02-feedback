@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 import s from './Statistics.module.css';
 
 export const Statistics = ({ statistics, total, positivePercentage }) => {
   return (
     <ul>
       {statistics.map(([key, value]) => (
-        <li className={s.text}>
+        <li className={s.textCapitalCase} key={shortid.generate()}>
           {key}: <span className={s.number}>{value} </span>
         </li>
       ))}
